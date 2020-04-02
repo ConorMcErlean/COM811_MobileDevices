@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Switch Activity</string>
+    <string name="app_name">SwitchActivity</string>
+    <string name="first_text">First Text</string>
+    <string name="first_button">FIRST BUTTON</string>
+    <string name="second_text">Second Text</string>
+    <string name="second_button">SECOND BUTTON</string>
 </resources>
