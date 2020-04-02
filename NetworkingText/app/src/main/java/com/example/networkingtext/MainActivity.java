@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -82,6 +83,19 @@ public class MainActivity extends AppCompatActivity {
                 break;
             default:
                 super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+
+    }// onRequestPermissionResult
+
+    // Allows download task to run on separate thread
+    private class DownloadTextTask extends AsyncTask<String, Void, String>{
+        protected String doInBackground(String...urls){
+            return DownloadText(urls[0]);
+        }
+        protected void onPostExecute(String result){
+            Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
+            txtView.setText(result);
         }
     }
 }
