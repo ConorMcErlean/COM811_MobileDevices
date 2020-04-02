@@ -15,6 +15,7 @@ import android.widget.Toast;
 import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
@@ -97,5 +98,36 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
             txtView.setText(result);
         }
+    }
+
+    private String DownloadText (String URL){
+        int BUFFER_SIZE = 2000;
+        InputStream in = null;
+        try{
+            in = OpenHttpConnection(URL);
+        }
+        catch (IOException e1){
+            Log.d("Networking", e1.getLocalizedMessage());
+        }
+
+        InputStreamReader isr = new InputStreamReader(in);
+        int charRead;
+        String str = "";
+        char[] inputBuffer = new char[BUFFER_SIZE];
+
+        try{
+            while ((charRead = isr.read(inputBuffer)) > 0){
+                // Converting Characters to a string
+                String readString = String.copyValueOf(inputBuffer, 0, charRead);
+                str += readString;
+                inputBuffer = new char[BUFFER_SIZE];
+            }
+            in.close();
+        }
+        catch (IOException e){
+            Log.d("Networking", e.getLocalizedMessage());
+            return "";
+        }
+        return str;
     }
 }
