@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                     this, new String[]{Manifest.permission.INTERNET}, REQUEST_INTERNET);
         }//if
         else{
-            new DownloadTextTask().execute("http://jfdimarzio.com/test.htm");
+            new DownloadTextTask().execute("https://www-eng-x.llnl.gov/documents/a_document.txt");
         }
     }
 
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         switch (requestCode){
             case REQUEST_INTERNET:
                 if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    new DownloadTextTask().execute("http://jfdimarzio.com/test.htm");
+                    new DownloadTextTask().execute("https://www-eng-x.llnl.gov/documents/a_document.txt");
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Permission Denied",
