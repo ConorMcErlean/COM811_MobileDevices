@@ -107,7 +107,8 @@ public class MainActivity extends AppCompatActivity {
         StringBuilder stringBuilder = new StringBuilder();
         HttpURLConnection urlConnection = null;
         try{
-            urlConnection = (HttpURLConnection) url.openConnection();
+             urlConnection = (HttpURLConnection) url.openConnection();
+
         } catch (IOException e){
             e.printStackTrace();
         }
