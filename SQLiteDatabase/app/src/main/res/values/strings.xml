@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SQLite Database</string>
+    <string name="txt_password">Password</string>
+    <string name="txt_username">User Name</string>
+    <string name="btn_signin">Sign In</string>
+    <string name="txtView_signup">Are you new? Sign up now.</string>
+    <string name="txt_ca_uname">User Name</string>
+    <string name="txt_ca_password">Password</string>
+    <string name="txt_ca_cpassword">Confirm Password</string>
+    <string name="btn_ca">Create Account</string>
+    <string name="txt_success">Welcome</string>
+    <string name="txt_logout">Log Out</string>
+</resources>
